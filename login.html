@@ -53,7 +53,7 @@
             <button href="#" type="button"  class="clear" id="forgotpassword" disabled >Recuperar senha</button>
         </div>
           <!--entrar-->
-          <button type="submit" id="login-button" disabled>Entrar</button>
+          <button type="submit" id="login-button" onclick="login()">Entrar</button>
         </form>
       </div>
       <!--Painel de controle de Login e Registro-->
@@ -69,5 +69,8 @@
     </div>
     <!--import script page-->
   <script src="script.js"></script>
+  <!--firebase auth-->
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
   </body>
 </html>

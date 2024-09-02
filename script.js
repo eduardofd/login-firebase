@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('mainForm');
     const email = document.getElementById('email');
     const password = document.getElementById('password');
-    const name = document.getElementById('name');
 
     email.addEventListener('input', () => {
         validateField(email, isEmail(email.value.trim()), 'Insira um email válido');
@@ -12,10 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     password.addEventListener('input', () => {
         validateField(password, password.value.trim().length >= 8, 'Senha inválida');
-    });
-
-    name.addEventListener('input', () => {
-        validateField(name, name.value.trim().length >= 5, 'Nome inválido');
     });
 
     function checkInputs() {
@@ -72,18 +67,6 @@ function toggleButton() {
     }
     document.querySelector('#login-button').disabled = true;
   }
-// função para o botão de registrar funcionar ou não 
-function toggleRegister() {
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
-  
-    if (name && email && password) {
-      document.querySelector('#register-button').disabled = false;
-      return
-    }
-    document.querySelector('#register-button').disabled = true;
-}
 // função para o botão de forgotpassword funcionar ou não (não está funcionando)
 function forgotpassword () {
     const email = document.querySelector('#email').value;
@@ -94,3 +77,28 @@ function forgotpassword () {
         }
     document.querySelector('#forgotpassword').disabled = true;
     }
+// função para indentificar o usuário e redirecionar para a página de home
+function initializeApp () {
+var firebaseConfig = {
+    apiKey: "AIzaSyDRAJT-6EhEwS3Vw2BXbVXvMYdoRGNRvow",
+    authDomain: "geta-site.firebaseapp.com",
+    databaseURL: "https://geta-site-default-rtdb.firebaseio.com",
+    projectId: "geta-site",
+    storageBucket: "geta-site.appspot.com",
+    messagingSenderId: "735904865497",
+    appId: "1:735904865497:web:40d9519dac695ad1d6f2c8",
+    measurementId: "G-DSXJQ2Q1NZ"
+  };
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+}
+
+function login() {
+    firebase.auth().signInWithEmailAndPassword(
+        form.email().value, form.password().value
+    ).then(response => {
+        window.location.href = "https://www.google.com";
+    }).catch(error => {
+        console.log('error', error)
+    });
+  }
