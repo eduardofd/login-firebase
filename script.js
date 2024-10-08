@@ -77,27 +77,25 @@ function forgotpassword () {
         }
     document.querySelector('#forgotpassword').disabled = true;
     }
-// função para indentificar o usuário e redirecionar para a página de home
-function initializeApp () {
-var firebaseConfig = {
-    apiKey: "AIzaSyDRAJT-6EhEwS3Vw2BXbVXvMYdoRGNRvow",
-    authDomain: "geta-site.firebaseapp.com",
-    databaseURL: "https://geta-site-default-rtdb.firebaseio.com",
-    projectId: "geta-site",
-    storageBucket: "geta-site.appspot.com",
-    messagingSenderId: "735904865497",
-    appId: "1:735904865497:web:40d9519dac695ad1d6f2c8",
-    measurementId: "G-DSXJQ2Q1NZ"
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAulnW0G9_F1qmO6SHYJ-pUY-MV3gRluj0",
+    authDomain: "monitoramento-geta.firebaseapp.com",
+    projectId: "monitoramento-geta",
+    storageBucket: "monitoramento-geta.appspot.com",
+    messagingSenderId: "813838838583",
+    appId: "1:813838838583:web:45f50db62147ac719dc8b2",
+    measurementId: "G-R3VLRMLEPT"
   };
+
   // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-}
-function login() {
-    firebase.auth().signInWithEmailAndPassword(
-        form.email().value, form.password().value
-    ).then(response => {
-        window.location.href = "home.html";
-    }).catch(error => {
-        console.log('error', error)
-    });
-  }
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
