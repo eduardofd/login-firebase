@@ -16,7 +16,7 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!--Paleta de Estilo-->
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Login - GETA</title>
   </head>
   <body>
@@ -51,14 +51,14 @@
             <button href="#" type="button"  class="clear" id="forgotpassword" disabled >Recuperar senha</button>
         </div>
           <!--entrar-->
-          <button type="submit" id="login-button" onclick="login()">Entrar</button>
+          <button type="button" id="login-button" onclick="login()">Entrar</button>
         </form>
       </div>
       <!--Painel de controle de Login e Registro-->
       <div class="toggle-container">
         <div class="toggle">
           <div class="toggle-panel toggle-right">
-            <h1><img src="../s_fundo.png" alt="GETA" width="100px" height="100px"><br>Bem vindo!</h1>
+            <h1><img src="../public/assets/s_fundo.png" alt="GETA" width="100px" height="100px"><br>Bem vindo!</h1>
             <p>Digite seus dados e tenha acesso aos seus sensores!</p>
           </div>
         </div>
@@ -66,9 +66,23 @@
     </div>
     </div>
     <!--import script page-->
-  <script src="../script.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/script.js"></script>
   <!--firebase auth-->
-  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
-  </body>
-</html>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAulnW0G9_F1qmO6SHYJ-pUY-MV3gRluj0",
+    authDomain: "monitoramento-geta.firebaseapp.com",
+    projectId: "monitoramento-geta",
+    storageBucket: "monitoramento-geta.appspot.com",
+    messagingSenderId: "813838838583",
+    appId: "1:813838838583:web:45f50db62147ac719dc8b2",
+    measurementId: "G-R3VLRMLEPT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  
+  </script>

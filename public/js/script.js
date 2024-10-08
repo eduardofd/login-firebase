@@ -54,19 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function isEmail(email) {
         return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email);
     }
-
+   
 });
-// função para o botão de entrar funcionar ou não
-function toggleButton() {
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
-  
-    if (email && password) {
-      document.querySelector('#login-button').disabled = false;
-      return
-    }
-    document.querySelector('#login-button').disabled = true;
-  }
 // função para o botão de forgotpassword funcionar ou não (não está funcionando)
 function forgotpassword () {
     const email = document.querySelector('#email').value;
@@ -78,24 +67,3 @@ function forgotpassword () {
     document.querySelector('#forgotpassword').disabled = true;
     }
 
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAulnW0G9_F1qmO6SHYJ-pUY-MV3gRluj0",
-    authDomain: "monitoramento-geta.firebaseapp.com",
-    projectId: "monitoramento-geta",
-    storageBucket: "monitoramento-geta.appspot.com",
-    messagingSenderId: "813838838583",
-    appId: "1:813838838583:web:45f50db62147ac719dc8b2",
-    measurementId: "G-R3VLRMLEPT"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
