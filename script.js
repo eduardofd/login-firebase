@@ -92,12 +92,11 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 }
-
 function login() {
     firebase.auth().signInWithEmailAndPassword(
         form.email().value, form.password().value
     ).then(response => {
-        window.location.href = "https://www.google.com";
+        window.location.href = "home.html";
     }).catch(error => {
         console.log('error', error)
     });
